@@ -50,7 +50,7 @@ var startTicTacToe = {
         TicTacToe.display.showGameChoice();
       });
     });
-    $('.hard-reset').on('click', TicTacToe.game.resetGame);
+    $('.reset-all').on('click', TicTacToe.game.resetGame);
   },
   
 
@@ -140,7 +140,7 @@ display: {
   showWinMessage: function() {
     TicTacToe.timeOuts.push(
       setTimeout(function() {
-    $('.win-message').fadeIn(500).children('p').text("Player " + TicTacToe.turn + " wins!! :D ")
+    $('.win-message').fadeIn(500).children('p').text("Player " + TicTacToe.turn + " wins!!! :D ")
 }, 1500));
 },
 
@@ -240,7 +240,7 @@ game: {
     TicTacToe.turn = TicTacToe.game.whoStarts();
     TicTacToe.display.hideGameStarter();
     $('#myCanvas').animate({'opacity': '1'}, 1200);
-    $('.hard-reset').fadeIn(600);
+    $('.reset-all').fadeIn(600);
     TicTacToe.display.showScore();
     TicTacToe.display.resetSquares();
     TicTacToe.game.play();
@@ -408,7 +408,7 @@ game: {
   
   resetGame: function() {
     $('#myCanvas').css('opacity', '0');
-    $('.hard-reset').fadeOut();
+    $('.reset-all').fadeOut();
     $('.points-divider, .score-1, .score-2').fadeOut();
     TicTacToe.playerOneScore = 0;
     TicTacToe.playerTwoScore = 0;
